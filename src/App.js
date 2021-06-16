@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import contacts from './contacts.json';
+// import contacts from './contacts.json';
 import shortId from 'shortid';
 
 import ContactForm from './Components/ContactForm';
@@ -10,7 +10,7 @@ import st from './App.module.css';
 
 class App extends Component {
   state = {
-    contacts,
+    contacts: [],
     filter: '',
   };
 
