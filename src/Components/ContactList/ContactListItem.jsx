@@ -1,16 +1,12 @@
 import PropTypes from 'prop-types';
 import st from './ContactList.module.css';
 
-const ContactListItem = ({ contact, onDeleteContact }) => {
+const ContactListItem = ({ name, number, onDeleteContact }) => {
   return (
     <li className={st.listItem}>
-      <span className={st.name}>{contact.name}:</span>
-      <span className={st.number}>{contact.number}</span>
-      <button
-        className={st.btn}
-        type="button"
-        onClick={() => onDeleteContact(contact.id)}
-      >
+      <span className={st.name}>{name}:</span>
+      <span className={st.number}>{number}</span>
+      <button className={st.btn} type="button" onClick={onDeleteContact}>
         Delete
       </button>
     </li>
@@ -18,7 +14,8 @@ const ContactListItem = ({ contact, onDeleteContact }) => {
 };
 
 ContactListItem.propTypes = {
-  contact: PropTypes.object.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
   onDeleteContact: PropTypes.func,
 };
 
